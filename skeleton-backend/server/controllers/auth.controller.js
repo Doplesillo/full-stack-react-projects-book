@@ -36,9 +36,11 @@ const signout = (req, res) => {
     })
 }
 
+// Needed algorithm because it was crashing without it
 const requireSignin = expressJwt({
     secret: config.jwtSecret,
-    userProperty: 'auth'
+    userProperty: 'auth',
+    algorithms: ['HS256']
 })
 
 const hasAuthorization = (req, res, next) => {

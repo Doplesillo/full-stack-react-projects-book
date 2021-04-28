@@ -1,6 +1,7 @@
 import User from '../models/user.model'
 import extend from 'lodash/extend'
-import errorHandler from './console.error.controller;'
+// errorHandler from git repository is the good one, the one in the book is wrong
+import errorHandler from '../helpers/dbErrorHandler'
 
 const create = async (req, res) => {
     const user = new User(req.body)

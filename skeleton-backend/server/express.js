@@ -18,6 +18,7 @@ app.use(compress())
 app.use(helmet())
 app.use(cors())
 
+app.use('/', userRoutes)
 app.use('/', authRoutes)
 
 
