@@ -27,6 +27,10 @@ app.use(cors())
 
 app.use('/dist',express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
+app.get('/', (req, res) => {
+    res.status(200).send(Template())
+})
+
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 
